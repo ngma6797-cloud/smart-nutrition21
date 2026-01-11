@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>موقع شخصيات الأنمي</title>
+<link href="https://fonts.googleapis.com/css2?family=Changa:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+
+<video autoplay muted loop id="bgVideo">
+  <source src="assets/background.mp4" type="video/mp4">
+</video>
+
+<button class="toggle" onclick="toggleMode()">🌙 / ☀️</button>
+
+<div class="container">
+  <h1>حوّل صورتك لشخصية أنمي</h1>
+
+  <input type="text" id="username" placeholder="اكتب اسمك">
+
+  <div class="character-selection">
+    <h3>أو اختر شخصية جاهزة:</h3>
+    <div class="chars">
+      <img src="assets/characters/char1.png" alt="char1" onclick="selectCharacter(this)">
+      <img src="assets/characters/char2.png" alt="char2" onclick="selectCharacter(this)">
+      <img src="assets/characters/char3.png" alt="char3" onclick="selectCharacter(this)">
+    </div>
+  </div>
+
+  <h3>أو ارفع صورتك:</h3>
+  <input type="file" id="imageInput" accept="image/*">
+
+  <button class="main-btn" onclick="generateAvatar()">إنشاء الشخصية</button>
+
+  <canvas id="canvas" width="420" height="480"></canvas>
+
+  <div class="actions">
+    <a id="download" download="anime-avatar.png">تحميل الصورة</a>
+    <button onclick="shareWhatsApp()">مشاركة واتساب</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
